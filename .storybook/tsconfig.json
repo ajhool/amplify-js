@@ -19,7 +19,7 @@
     "skipLibCheck": true,
     "isolatedModules": false,
     "typeRoots": [
-      "./node_modules/@types"
+      "../node_modules/@types"
     ],
     "lib": [
       "dom",
