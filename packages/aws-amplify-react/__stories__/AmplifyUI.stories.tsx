@@ -1,21 +1,35 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react'
-import { Container } from '../../src/Amplify-UI/Amplify-UI-Components-React';
+import * as UI from '../src/AmplifyUI';
+
 
 storiesOf('Amplify-UI/Container', module)
   .add('No Props', () => {
     return (
-        <Container>
+        <UI.Container>
             <div>Example Content</div>
-        </Container>
+        </UI.Container>
     );
   })
 
 
+
+// export const Container = (props) => {
+//     const theme = props.theme || AmplifyTheme;
+//     const style = propStyle(props, theme.container);
+//     const p = JS.objectLessAttributes(props, 'theme');
+//     return beforeAfter(
+//         <div {...p} className="amplify-container" style={style}>
+//             {props.children}
+//         </div>
+//     );
+// };
+
 // export const FormContainer = (props) => {
 //     const theme = props.theme || AmplifyTheme;
+//     const style = propStyle(props, theme.formContainer);
 //     return beforeAfter(
-//         <div className={AmplifyUI.formContainer} style={theme.formContainer}>
+//         <div className="amplify-form-container" style={style}>
 //             {props.children}
 //         </div>
 //     );
@@ -27,11 +41,34 @@ storiesOf('Amplify-UI/Container', module)
 //     return (
 //         <FormContainer theme={theme}>
 //             {beforeAfter(
-//                 <div className={AmplifyUI.formSection} style={style}>
+//                 <div className="amplify-form-section" style={style}>
 //                     {props.children}
 //                 </div>
 //             )}
 //         </FormContainer>
+//     );
+// };
+
+// export const ErrorSection = (props) => {
+//     const theme = props.theme || AmplifyTheme;
+//     const style = propStyle(props, theme.errorSection);
+//     const p = JS.objectLessAttributes(props, 'theme');
+//     return beforeAfter(
+//         <div {...p} className="amplify-error-section" style={style}>
+//             <ErrorSectionContent>
+//                 {props.children}
+//             </ErrorSectionContent>
+//         </div>
+//     );
+// };
+
+// export const ErrorSectionContent = (props) => {
+//     const theme = props.theme || AmplifyTheme;
+//     const style = propStyle(props, theme.errorSectionContent);
+//     return beforeAfter(
+//         <span className="amplify-error-section-content" style={style}>
+//             {props.children}
+//         </span>
 //     );
 // };
 
@@ -40,14 +77,9 @@ storiesOf('Amplify-UI/Container', module)
 //     const style = propStyle(props, theme.sectionHeader);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <div {...p} className={AmplifyUI.sectionHeader} style={style}>
+//         <div {...p} className="amplify-section-header" style={style}>
 //             <SectionHeaderContent theme={theme}>
 //                 {props.children}
-//                 {props.hint &&
-//                     <div className={AmplifyUI.sectionHeaderHint}>
-//                         {props.hint}
-//                     </div>
-//                 }
 //             </SectionHeaderContent>
 //         </div>
 //     );
@@ -57,7 +89,7 @@ storiesOf('Amplify-UI/Container', module)
 //     const theme = props.theme || AmplifyTheme;
 //     const style = propStyle(props, theme.sectionHeaderContent);
 //     return beforeAfter(
-//         <span className={AmplifyUI.sectionHeaderContent} style={style}>
+//         <span className="amplify-section-header-content" style={style}>
 //             {props.children}
 //         </span>
 //     );
@@ -68,27 +100,19 @@ storiesOf('Amplify-UI/Container', module)
 //     const style = propStyle(props, theme.sectionFooter);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <div {...p} className={AmplifyUI.sectionFooter} style={style}>
-//             {props.children}
+//         <div {...p} className="amplify-section-footer" style={style}>
+//             <SectionFooterContent>
+//                 {props.children}
+//             </SectionFooterContent>
 //         </div>
 //     );
 // };
 
-// export const SectionFooterPrimaryContent = (props) => {
+// export const SectionFooterContent = (props) => {
 //     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.sectionFooterPrimaryContent);
+//     const style = propStyle(props, theme.sectionFooterContent);
 //     return beforeAfter(
-//         <span className={AmplifyUI.sectionFooterPrimaryContent} style={style}>
-//             {props.children}
-//         </span>
-//     );
-// };
-
-// export const SectionFooterSecondaryContent = (props) => {
-//     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.sectionFooterSecondaryContent);
-//     return beforeAfter(
-//         <span className={AmplifyUI.sectionFooterSecondaryContent} style={style}>
+//         <span className="amplify-section-footer-content" style={style}>
 //             {props.children}
 //         </span>
 //     );
@@ -99,7 +123,7 @@ storiesOf('Amplify-UI/Container', module)
 //     const style = propStyle(props, theme.sectionBody);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <div {...p} className={AmplifyUI.sectionBody} style={style}>
+//         <div {...p} className="amplify-section-body" style={style}>
 //             {props.children}
 //         </div>
 //     );
@@ -116,33 +140,31 @@ storiesOf('Amplify-UI/Container', module)
 //     );
 // };
 
-// export const Strike = (props) => {
-//     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.strike);
-//     return beforeAfter(
-//         <div className={AmplifyUI.strike} style={style}>
-//             <StrikeContent theme={theme}>{props.children}</StrikeContent>
-//         </div>
-//     );
-// };
-
-// export const StrikeContent = (props) => {
-//     const theme = props.theme || AmplifyTheme;
-//     return beforeAfter(
-//         <span className={AmplifyUI.strikeContent} style={theme.strikeContent}>
-//             {props.children}
-//         </span>
-//     );
-// };
-
 // export const FormRow = (props) => {
 //     const theme = props.theme || AmplifyTheme;
 //     const style = propStyle(props, theme.formRow);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <div {...p} className={AmplifyUI.formRow} style={style}>
+//         <div {...p} className="amplify-form-row" style={style}>
 //             {props.children}
 //         </div>
+//     );
+// };
+
+// export const InputRow = (props) => {
+//     const theme = props.theme || AmplifyTheme;
+//     const style = propStyle(props, theme.input);
+//     const p = JS.objectLessAttributes(props, 'theme');
+//     return (
+//         <FormRow theme={theme}>
+//             {beforeAfter(
+//                 <input
+//                     {...p}
+//                     className="amplify-input"
+//                     style={style}
+//                 />
+//             )}
+//         </FormRow>
 //     );
 // };
 
@@ -171,51 +193,66 @@ storiesOf('Amplify-UI/Container', module)
 //             <input
 //                 {...p}
 //                 type="radio"
-//                 className={AmplifyUI.radio}
+//                 className="amplify-radio"
 //                 style={style}
 //             />
 //     );
 // };
 
-// export const InputRow = (props) => {
+// export const CheckboxRow = (props) => {
+//     const id = props.id || '_' + props.name;
 //     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.input);
-//     const p = JS.objectLessAttributes(props, 'theme');
 //     return (
 //         <FormRow theme={theme}>
-//             {beforeAfter(
-//                 <input {...p} className={AmplifyUI.input} style={style} />
-//             )}
+//             <Checkbox
+//                 {...props}
+//                 id={id}
+//             />
+//             <Label
+//                 htmlFor={id}
+//                 theme={theme}
+//             >{props.placeholder}</Label>
 //         </FormRow>
 //     );
 // };
 
-// export const Input = (props) => {
+// export const Checkbox = (props) => {
 //     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.input);
-//     const p = JS.objectLessAttributes(props, 'theme');
-//     return (
-//         <input {...p} className={AmplifyUI.input} style={style} />
-//     );
-// };
-
-// export const SelectInput = (props) => {
-//     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.selectInput);
-//     return (
-//         <div className={AmplifyUI.selectInput} style={style}>
-//             {props.children}
-//         </div>
-//     );
-// };
-
-// export const FormField = (props) => {
-//     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.formField);
+//     const style = propStyle(props, theme.checkbox);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <div {...p} className={AmplifyUI.formField} style={style}>
+//         <input
+//             {...p}
+//             type="checkbox"
+//             className="amplify-checkbox"
+//             style={style}
+//         />
+//     );
+// };
+
+// export const MessageRow = (props) => {
+//     const theme = props.theme || AmplifyTheme;
+//     return (
+//         <FormRow theme={theme}>
+//             <MessageContent theme={theme}>{props.children}</MessageContent>
+//         </FormRow>
+//     );
+// };
+
+// export const MessageContent = (props) => {
+//     const theme = props.theme || AmplifyTheme;
+//     return beforeAfter(
+//         <span className="amplify-message-content" style={theme.messageContent}>
 //             {props.children}
+//         </span>
+//     );
+// };
+
+// export const ButtonRow = (props) => {
+//     const theme = props.theme || AmplifyTheme;
+//     return beforeAfter(
+//         <div className="amplify-action-row" style={theme.actionRow}>
+//             <Button {...props} />
 //         </div>
 //     );
 // };
@@ -223,56 +260,32 @@ storiesOf('Amplify-UI/Container', module)
 // export const Button = (props) => {
 //     const theme = props.theme || AmplifyTheme;
 //     const style = propStyle(props, theme.button);
-//     const disabled = props.disabled || false;
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <button {...p} className={AmplifyUI.button} style={style} disabled={disabled}>
-//             {props.children}
+//         <button {...p} className="amplify-button" style={style}>
+//             <ButtonContent theme={theme}>{props.children}</ButtonContent>
 //         </button>
 //     );
 // };
 
-// export const PhotoPickerButton = (props) => {
+// export const ButtonContent = (props) => {
 //     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.photoPickerButton);
-//     const p = JS.objectLessAttributes(props, 'theme');
-//     return (
-//         <button {...p} className={[AmplifyUI.photoPickerButton, AmplifyUI.button].join(' ')} style={style}>
+//     return beforeAfter(
+//         <span className="amplify-button-content" style={theme.buttonContent}>
 //             {props.children}
-//         </button>
+//         </span>
 //     );
 // };
 
 // export const SignInButton = (props) => {
 //     const theme = props.theme || AmplifyTheme;
-//     const styles = Object.assign({}, theme.signInButton, theme[props.variant]);
+//     const style = propStyle(props, theme.signInButton);
 //     const p = JS.objectLessAttributes(props, 'theme');
 
 //     return beforeAfter(
-//         <button {...p} className={AmplifyUI.signInButton} style={styles}>
+//         <button {...p} className="amplify-signin-button" style={style}>
 //             {props.children}
 //         </button>
-//     );
-// };
-
-// export const SignInButtonIcon = (props) => {
-//     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.signInButtonIcon);
-//     const p = JS.objectLessAttributes(props, 'theme');
-//     return beforeAfter(
-//         <span {...p} className={AmplifyUI.signInButtonIcon} style={style}>
-//             {props.children}
-//         </span>
-//     );
-// };
-
-// export const SignInButtonContent = (props) => {
-//     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.signInButtonContent);
-//     return beforeAfter(
-//         <span className={AmplifyUI.signInButtonContent} style={style}>
-//             {props.children}
-//         </span>
 //     );
 // };
 
@@ -281,7 +294,7 @@ storiesOf('Amplify-UI/Container', module)
 //     const style = propStyle(props, theme.a);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <a {...p} className={AmplifyUI.a} style={style}>{props.children}</a>
+//         <a {...p} className="amplify-a" style={style}>{props.children}</a>
 //     );
 // };
 
@@ -290,27 +303,16 @@ storiesOf('Amplify-UI/Container', module)
 //     const style = propStyle(props, theme.label);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <label {...p} className={AmplifyUI.label} style={style}>{props.children}</label>
+//         <label {...p} className="amplify-label" style={style}>{props.children}</label>
 //     );
 // };
 
-// export const Hint = (props) => {
+// export const Space = (props) => {
 //     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.hint);
+//     const style = propStyle(props, theme.space);
+//     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <div className={AmplifyUI.hint} style={style}>
-//             {props.children}
-//         </div>
-//     );
-// };
-
-// export const InputLabel = (props) => {
-//     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.inputLabel);
-//     return beforeAfter(
-//         <div className={AmplifyUI.inputLabel} style={style}>
-//             {props.children}
-//         </div>
+//         <span {...p} className="amplify-space" style={style}>{props.children}</span>
 //     );
 // };
 
@@ -319,7 +321,7 @@ storiesOf('Amplify-UI/Container', module)
 //     const style = propStyle(props, theme.navBar);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <div {...p} className={AmplifyUI.navBar} style={style}>
+//         <div {...p} className="amplify-nav-bar" style={style}>
 //             {props.children}
 //         </div>
 //     );
@@ -330,7 +332,7 @@ storiesOf('Amplify-UI/Container', module)
 //     const style = propStyle(props, theme.nav);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <div {...p} className={AmplifyUI.nav} style={style}>
+//         <div {...p} className="amplify-nav" style={style}>
 //             {props.children}
 //         </div>
 //     );
@@ -341,7 +343,7 @@ storiesOf('Amplify-UI/Container', module)
 //     const style = propStyle(props, theme.navRight);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <div {...p} className={AmplifyUI.navRight} style={style}>
+//         <div {...p} className="amplify-nav-right" style={style}>
 //             {props.children}
 //         </div>
 //     );
@@ -352,7 +354,7 @@ storiesOf('Amplify-UI/Container', module)
 //     const style = propStyle(props, theme.navItem);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <div {...p} className={AmplifyUI.navItem} style={style}>
+//         <div {...p} className="amplify-nav-item" style={style}>
 //             {props.children}
 //         </div>
 //     );
@@ -363,44 +365,11 @@ storiesOf('Amplify-UI/Container', module)
 //     const style = propStyle(props, theme.navButton);
 //     const p = JS.objectLessAttributes(props, 'theme');
 //     return beforeAfter(
-//         <button {...p} className={AmplifyUI.button} style={style}>
+//         <button {...p} className="amplify-nav-button" style={style}>
 //             {beforeAfter(
-//                 <span>{props.children}</span>
+//                 <span style={theme.navButtonContent}>{props.children}</span>
 //             )}
 //         </button>
-//     );
-// };
-
-// export const Toast = (props) => {
-//     const { onClose } = props;
-//     const theme = props.theme || AmplifyTheme;
-
-//     return (
-//         <div {...props} theme={theme} className={AmplifyUI.toast} style={theme.toast}>
-//             <span>{props.children}</span>
-//             <a className={AmplifyUI.toastClose} onClick={onClose}/>
-//         </div>
-//     );
-// };
-
-// Toast.defaultProps = {
-//     onClose: () => void(0)
-// };
-
-// export const PhotoPlaceholder = (props) => {
-//     const theme = props.theme || AmplifyTheme;
-//     const style = propStyle(props, theme.photoPlaceholder);
-//     return (
-//         <div className={AmplifyUI.photoPlaceholder} style={style}>
-//             <div className={AmplifyUI.photoPlaceholderIcon}>
-//                 <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24'>
-//                     <circle cx='12' cy='12' r='3.2' />
-//                     <path d='M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z'
-//                     />
-//                     <path d='M0 0h24v24H0z' fill='none' />
-//                 </svg>
-//             </div>
-//         </div>
 //     );
 // };
 
@@ -410,10 +379,10 @@ storiesOf('Amplify-UI/Container', module)
 //     if (!before && !after) { return el; }
 
 //     return (
-//         <span style={{ position: 'relative' }}>
-//             {before ? <span style={before}>{before.content}</span> : null}
+//         <span style={{position: 'relative'}}>
+//             {before? <span style={before}>{before.content}</span> : null}
 //             {el}
-//             {after ? <span style={after}>{after.content}</span> : null}
+//             {after? <span style={after}>{after.content}</span> : null}
 //         </span>
 //     );
 // };
@@ -427,3 +396,7 @@ storiesOf('Amplify-UI/Container', module)
 //     Object.assign(styl, styl[selector]);
 //     return styl;
 // };
+
+// export const transparent1X1 = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+
+// export const white1X1 = 'data:image/gif;base64,R0lGODlhAQABAIAAAP7//wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==';
