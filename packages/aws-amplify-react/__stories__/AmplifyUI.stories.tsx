@@ -2,7 +2,6 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react'
 import * as UI from '../src/AmplifyUI';
 
-
 storiesOf('Amplify-UI/Container', module)
   .add('No Props', () => {
     return (
@@ -11,8 +10,6 @@ storiesOf('Amplify-UI/Container', module)
         </UI.Container>
     );
   })
-
-
 
 // export const Container = (props) => {
 //     const theme = props.theme || AmplifyTheme;
@@ -25,6 +22,15 @@ storiesOf('Amplify-UI/Container', module)
 //     );
 // };
 
+// storiesOf('Amplify-UI/FormContainer', module)
+//   .add('No Props', () => {
+//     return (
+//         <UI.FormContainer>
+//             <div>Example Content</div>
+//         </UI.FormContainer>
+//     );
+//   })
+
 // export const FormContainer = (props) => {
 //     const theme = props.theme || AmplifyTheme;
 //     const style = propStyle(props, theme.formContainer);
@@ -34,6 +40,15 @@ storiesOf('Amplify-UI/Container', module)
 //         </div>
 //     );
 // };
+
+// storiesOf('Amplify-UI/FormSection', module)
+//   .add('No Props', () => {
+//     return (
+//         <UI.FormContainer>
+//             <div>Example Content</div>
+//         </UI.FormContainer>
+//     );
+//   })
 
 // export const FormSection = (props) => {
 //     const theme = props.theme || AmplifyTheme;
@@ -48,6 +63,16 @@ storiesOf('Amplify-UI/Container', module)
 //         </FormContainer>
 //     );
 // };
+
+// storiesOf('Amplify-UI/ErrorSection', module)
+//   .add('No Props', () => {
+//     return (
+//         <UI.FormContainer>
+//             <div>Example Content</div>
+//         </UI.FormContainer>
+//     );
+//   })
+
 
 // export const ErrorSection = (props) => {
 //     const theme = props.theme || AmplifyTheme;

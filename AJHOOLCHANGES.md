@@ -19,3 +19,10 @@ which worked.
 ## Decision. Where to place storybooks?
 I personally prefer colocation (eg. /storage/somecomponent.tsx & /storage/somecomponent.stories/tsx). However, will instead create \__stories\__ folders next to the \__tests\__ folders within each relevant package
 
+## Trouble:
+initially tried:
+lerna bootstrap
+Saw error about @aws-amplify/core resolution
+Then tried
+yarn build
+
